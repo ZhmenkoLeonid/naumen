@@ -44,8 +44,7 @@ public class Cache {
         if (frequencyCountMap == null) {
             // init
             frequencyCountMap = new HashMap<>();
-            for (int i = 0; i < requestNumberList.size(); i++) {
-                long requestNumber = requestNumberList.get(i);
+            for (long requestNumber : requestNumberList) {
                 frequencyCountMap.putIfAbsent(requestNumber, 0);
                 frequencyCountMap.put(requestNumber, frequencyCountMap.get(requestNumber) + 1);
             }
